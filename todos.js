@@ -1,9 +1,8 @@
-document.addEventListener("DOMContentLoaded", () => {
+try {
+  document.addEventListener("DOMContentLoaded", () => {
     let container = document.querySelector(".container");
     let loading = document.querySelector(".loading");
     loading.style.display = "block";
-  
-   try{
     (async function name() {
       let res = await fetch("https://jsonplaceholder.typicode.com/todos");
       let data = await res.json();
@@ -23,8 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         container.append(card);
       });
     })();
-   } catch (error) {
-     console.log("error");
-   }
   });
-  
+} catch (error) {
+  console.log("error");
+}

@@ -1,9 +1,9 @@
-document.addEventListener("DOMContentLoaded", () => {
-  let container = document.querySelector(".container");
-  let loading = document.querySelector(".loading");
-  loading.style.display = "block";
 
 try {
+  document.addEventListener("DOMContentLoaded", () => {
+    let container = document.querySelector(".container");
+    let loading = document.querySelector(".loading");
+    loading.style.display = "block";
   (async function name() {
     let res = await fetch("https://jsonplaceholder.typicode.com/albums");
     let data = await res.json();
@@ -21,7 +21,7 @@ try {
       container.append(card);
     });
   })();
+});
 } catch (error) {
   console.log("error");
 }
-});

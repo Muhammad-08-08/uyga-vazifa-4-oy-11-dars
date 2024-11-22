@@ -1,9 +1,8 @@
-document.addEventListener("DOMContentLoaded", () => {
-  let container = document.querySelector(".container");
-  let loading = document.querySelector(".loading");
-  loading.style.display = "block";
-
-  try{
+try {
+  document.addEventListener("DOMContentLoaded", () => {
+    let container = document.querySelector(".container");
+    let loading = document.querySelector(".loading");
+    loading.style.display = "block";
     (async function name() {
       let res = await fetch("https://jsonplaceholder.typicode.com/users");
       let data = await res.json();
@@ -23,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let phone = document.createElement("h3");
         let website = document.createElement("h3");
         let company = document.createElement("h3");
-  
+
         id.textContent = "''id:'' " + elem.id;
         name.textContent = "''name:'' " + elem.name;
         username.textContent = "''username:'' " + elem.username;
@@ -40,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
           "''name:'' " +
           elem.company.name +
           ", ''catchPhrase:'' " +
-          elem.company.catchPhrase +  
+          elem.company.catchPhrase +
           ", ''bs:'' " +
           elem.company.bs;
         card.append(
@@ -62,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
         container.append(card);
       });
     })();
-  } catch (error) {
-    console.log("error");
-  }
-});
+  });
+} catch (error) {
+  console.log("error");
+}
